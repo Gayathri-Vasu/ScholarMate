@@ -1,0 +1,17 @@
+<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Simple graduation cap design for favicon -->
+  <g transform="translate(2, 4)">
+    <!-- Cap base -->
+    <path d="M2 1L10 1L8 4L4 4L2 1Z" fill="#000"/>
+    <!-- Cap top -->
+    <path d="M4 4L8 4L7 5L5 5L4 4Z" fill="#000"/>
+    <!-- Tassel -->
+    <circle cx="8" cy="2" r="0.4" fill="#000"/>
+    <path d="M8 2L10 1.5" stroke="#000" stroke-width="0.3"/>
+  </g>
+  
+  <!-- Simple globe -->
+  <circle cx="8" cy="8" r="6" stroke="#000" stroke-width="1" fill="none"/>
+  <path d="M2 8h12M8 2v12" stroke="#000" stroke-width="0.5"/>
+</svg>
+
