@@ -1,17 +1,17 @@
-require('dotenv').config();
-const express = require('express');
-const mongoose = require('mongoose');
-const cors = require('cors');
-const helmet = require('helmet');
-const morgan = require('morgan');
-const compression = require('compression');
-const rateLimit = require('express-rate-limit');
-require('dotenv').config({ path: '../.env' });
-
-// Import routes
-const categoryRoutes = require('./routes/categories');
-const subjectRoutes = require('./routes/subjects');
-const courseRoutes = require('./routes/courses');
+import dotenv from 'dotenv';
+dotenv.config();
+import express from 'express';
+import mongoose from 'mongoose';
+import cors from 'cors';
+import helmet from 'helmet';
+import morgan from 'morgan';
+import compression from 'compression';
+import rateLimit from 'express-rate-limit';
+import path from 'path';
+import categoryRoutes from './routes/categories.js';
+import subjectRoutes from './routes/subjects.js';
+import courseRoutes from './routes/courses.js';
+import chatRouter from './routes/chat.js';
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -42,7 +42,6 @@ app.use(express.json({ limit: '10mb' }));
 app.use(express.urlencoded({ extended: true, limit: '10mb' }));
 
 // Static uploads for serving PDFs and assets
-const path = require('path');
 const uploadsPath = path.join(process.cwd(), 'uploads');
 app.use('/uploads', express.static(uploadsPath));
 
@@ -85,7 +84,7 @@ const API_VERSION = process.env.API_VERSION || 'v1';
 app.use(`/api/${API_VERSION}/categories`, categoryRoutes);
 app.use(`/api/${API_VERSION}/subjects`, subjectRoutes);
 app.use(`/api/${API_VERSION}/courses`, courseRoutes);
-app.use(`/api/${API_VERSION}/chat`, require('./routes/chat'));
+app.use(`/api/${API_VERSION}/chat`, chatRouter);
 
 // Root endpoint
 app.get('/', (req, res) => {
@@ -167,4 +166,4 @@ process.on('SIGINT', () => {
   });
 });
 
-module.exports = app;
+export default app;

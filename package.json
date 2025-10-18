@@ -36,6 +36,8 @@
   "author": "Tamil Nadu Learning Hub",
   "license": "MIT",
   "dependencies": {
-    "dotenv": "^17.2.2"
+    "@huggingface/transformers": "^3.7.5",
+    "dotenv": "^17.2.2",
+    "openai": "^6.3.0"
   }
 }

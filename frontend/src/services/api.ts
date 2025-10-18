@@ -105,6 +105,13 @@ class ApiService {
   async getCourseBySlug(slug: string) {
     return this.request<any>(`/courses/${slug}`);
   }
+
+  async getChatbotResponse(message: string) {
+    return this.request<{ response: string }>('/chat', {
+      method: 'POST',
+      body: JSON.stringify({ message }),
+    });
+  }
 }
 
 export const apiService = new ApiService(API_BASE_URL);
