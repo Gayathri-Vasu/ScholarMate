@@ -1,7 +1,6 @@
 {
   "name": "tn-learning-hub-api",
   "version": "1.0.0",
-  "type": "module",
   "description": "Node.js API for Tamil Nadu Learning Hub",
   "main": "server.js",
   "scripts": {
