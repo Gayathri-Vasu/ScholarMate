@@ -56,7 +56,7 @@ if (process.env.NODE_ENV === 'development') {
 }
 
 // MongoDB connection (keepAlive to avoid intermittent disconnects)
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/tn-learning-hub', {
+mongoose.connect(process.env.MONGO_URI || 'mongodb://localhost:27017/tn-learning-hub', {
   serverSelectionTimeoutMS: 10000,
   socketTimeoutMS: 45000,
   family: 4
